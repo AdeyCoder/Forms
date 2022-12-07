@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+}
+
+:root {
+    --bg-color: #133027;
+    --accent: #AAFF00;
+    --accent-t9: #AAFF009D;
+    --white: #FFFFFF;
+    --white-ta: #FFFFFFAF;
+    --white-t9: #FFFFFF9D;
+}
+
+section {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.toggle {
+    width: 9rem;
+    height: 4rem;
+    position: relative;
+    isolation: isolate;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: "";
+    position: absolute;
+    height: 1rem;
+    background-color: var(--white-t9);
+    top: 1.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    z-index: -1;
+    transition: all 0.35s cubic-bezier(1, 0, 1, .59);
+}
+
+.toggle-ball {
+    display: block;
+    background-color: var(--bg-color);
+    border: 0.6rem solid var(--white-ta);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    transition: all 0.35s linear;
+    box-shadow: 0 0 0 0.5rem var(--bg-color);
+}
+
+.toggle-ball:hover {
+    border-color: var(--accent-t9);
+}
+
+#toggle:checked~.toggle .toggle-ball {
+    border-width: 2rem;
+    border-color: var(--accent);
+    margin-left: calc(100% - 4rem);
+}
+
+#toggle:checked~.toggle::before {
+    background-color: var(--accent-t9);
+}

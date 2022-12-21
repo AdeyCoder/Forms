@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Validation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <section>
+      <div class="password-field">
+        <label for="password"> Password </label>
+
+        <div class="input-field">
+          <input
+            type="password"
+            name="u-password"
+            id="password"
+            placeholder="PASSWORD"
+            data-complete=""
+          />
+          <span class="visibility"> <i class="fa-regular fa-eye"></i> </span>
+        </div>
+        <div class="content">
+          <div class="lowercase" data-found="false">
+            At least one lowercase letter (a-z)
+          </div>
+          <div class="uppercase" data-found="false">
+            At least one uppercase letter (A-Z)
+          </div>
+          <div class="number" data-found="false">At least one number (0-9)</div>
+          <div class="character" data-found="false">
+            At least one special character (@ # $ % ! & * _)
+          </div>
+          <div class="length" data-found="false">
+            Minimum length 8 characters
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./validation.js"></script>
+  </body>
+</html>

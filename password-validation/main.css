@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s linear;
+    font-family: "poppins", sans-serif;
+}
+
+:root {
+    --accent: #FB0;
+    --success: #5C5;
+    --fail: #f55;
+    --content-width: 360px;
+    --border-color: #222;
+    --color: #fff;
+}
+
+section {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: #111;
+    color: var(--color);
+}
+
+.password-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: #333;
+    padding: 2.5rem;
+}
+
+.password-field label {
+    font-size: 0.9rem;
+    display: block;
+    color: #ddd;
+}
+
+.password-field label:hover {
+    color: var(--accent);
+}
+
+.password-field .input-field {
+    position: relative;
+}
+
+.password-field input {
+    padding: 1rem;
+    padding-right: 4rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    background-color: #222;
+    border: 3px solid var(--border-color);
+    color: var(--color);
+    outline: none;
+    width: var(--content-width);
+}
+
+.password-field input:hover,
+.password-field input:focus {
+    --border-color: var(--accent);
+    --color: var(--accent)
+}
+
+.password-field input[data-complete="true"] {
+    --border-color: var(--success);
+    --color: var(--success)
+}
+
+.password-field input[data-complete="false"] {
+    --border-color: var(--fail);
+    --color: var(--fail)
+}
+
+.password-field span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: var(--color);
+    width: 4rem;
+    display: grid;
+    place-content: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.password-field span:hover {
+    color: var(--accent);
+}
+
+.password-field .content {
+    margin-block: 0.5rem;
+}
+
+.password-field .content div {
+    line-height: 1.5rem;
+    position: relative;
+    padding: 0.25rem;
+    padding-left: 1.5rem;
+    color: var(--color);
+    width: var(--content-width);
+}
+
+.password-field .content div::before {
+    content: "";
+    background-color: var(--state, #111);
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+}
+
+.password-field .content div[data-found="true"] {
+    --state: var(--success);
+    color: #888;
+}
